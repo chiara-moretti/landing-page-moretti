@@ -27,6 +27,10 @@
     background: #424242;
   }
 
+  :global(html[data-theme='light']) .filter-chip:hover {
+    color: #ffffff;
+  }
+
   .filter-chip.selected {
     background: var(--color-filter-background-selected);
     color: var(--color-filter-content-selected);

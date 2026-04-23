@@ -18,7 +18,7 @@
 
 <nav class="topbar">
   <div class="brand">
-    <p class="brand-text">Frammemento</p>
+    <a class="brand-text" href="/">Frammemento</a>
   </div>
   <div class="menu">
     <a class="menu-link" href="/">About</a>
@@ -58,6 +58,12 @@
     color: var(--color-link-default);
     text-decoration: none;
     white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .brand-text:hover,
+  .menu-link:hover {
+    color: var(--color-filter-background-selected);
   }
 
   .theme-toggle-button {

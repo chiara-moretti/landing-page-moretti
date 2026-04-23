@@ -3,9 +3,9 @@
 </script>
 
 <footer class="footer">
-  <div class="footer-logo">
+  <a class="footer-logo" href="https://www.polimi.it" target="_blank" rel="noopener noreferrer">
     <img alt="Politecnico logo" src={logoSrc} />
-  </div>
+  </a>
 </footer>
 
 <style>
@@ -27,5 +27,9 @@
     height: 100%;
     object-fit: contain;
     display: block;
+  }
+
+  :global(html[data-theme='light']) .footer-logo img {
+    filter: brightness(0) saturate(100%);
   }
 </style>
