@@ -1,6 +1,20 @@
 :root {
     --font-primary: "Satoshi", sans-serif;
     --font-secondary: "Inter", sans-serif;
+    --font-font-1: "Satoshi", sans-serif;
 
     font-feature-settings: 'liga' 1, 'calt' 1;
+
+    /* Typography tokens */
+    --h1-font-family: var(--font-font-1);
+    --h1-font-size: var(--unit-40);
+    --h1-font-weight: 400;
+    --h1-line-height: 1;
+    --h1-letter-spacing: 0;
+
+    --h2-font-family: var(--font-font-1);
+    --h2-font-size: var(--unit-24);
+    --h2-font-weight: 400;
+    --h2-line-height: 1;
+    --h2-letter-spacing: 0;
 }

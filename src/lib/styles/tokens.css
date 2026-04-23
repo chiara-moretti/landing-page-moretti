@@ -1,1 +1,69 @@
 @import "tokens/typography.css";
+@import "tokens/colors.css";
+@import "tokens/spacing.css";
+@import "tokens/radius.css";
+@import "tokens/layout.css";
+
+/* Utility Classes */
+
+/* Background Colors */
+.bg-primary { background-color: var(--color-background-primary); }
+.bg-filter-selected { background-color: var(--color-filter-background-selected); }
+
+/* Text Colors */
+.text-link { color: var(--color-link-default); }
+.text-primary { color: var(--color-content-primary); }
+.text-secondary { color: var(--color-content-secondary); }
+.text-filter-selected { color: var(--color-filter-content-selected); }
+
+/* Spacing */
+.p-0 { padding: var(--spacing-0); }
+.p-1 { padding: var(--spacing-1); }
+.p-2 { padding: var(--spacing-2); }
+.p-4 { padding: var(--spacing-4); }
+.p-5 { padding: var(--spacing-5); }
+.p-12 { padding: var(--spacing-12); }
+
+.px-0 { padding-left: var(--spacing-0); padding-right: var(--spacing-0); }
+.px-1 { padding-left: var(--spacing-1); padding-right: var(--spacing-1); }
+.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.px-4 { padding-left: var(--spacing-4); padding-right: var(--spacing-4); }
+.px-5 { padding-left: var(--spacing-5); padding-right: var(--spacing-5); }
+.px-12 { padding-left: var(--spacing-12); padding-right: var(--spacing-12); }
+
+.py-0 { padding-top: var(--spacing-0); padding-bottom: var(--spacing-0); }
+.py-1 { padding-top: var(--spacing-1); padding-bottom: var(--spacing-1); }
+.py-2 { padding-top: var(--spacing-2); padding-bottom: var(--spacing-2); }
+.py-4 { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
+.py-5 { padding-top: var(--spacing-5); padding-bottom: var(--spacing-5); }
+.py-12 { padding-top: var(--spacing-12); padding-bottom: var(--spacing-12); }
+
+.gap-1 { gap: var(--spacing-1); }
+.gap-2 { gap: var(--spacing-2); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-5 { gap: var(--spacing-5); }
+.gap-6 { gap: var(--spacing-6); }
+.gap-7 { gap: var(--spacing-7); }
+
+/* Border Radius */
+.rounded-full { border-radius: var(--radius-full); }
+.rounded-m { border-radius: var(--radius-m); }
+
+/* Typography */
+.font-primary { font-family: var(--font-font-1); }
+.text-h1 {
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-spacing);
+}
+.text-h2 {
+  font-family: var(--h2-font-family);
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
+  line-height: var(--h2-line-height);
+  letter-spacing: var(--h2-letter-spacing);
+}
+.text-24 { font-size: var(--unit-24); }
+.text-40 { font-size: var(--unit-40); }

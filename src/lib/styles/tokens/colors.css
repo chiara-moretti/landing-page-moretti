@@ -1,0 +1,19 @@
+:root {
+  /* Dark Mode Colors (Default) */
+  --color-background-primary: #075036;
+  --color-link-default: #fafafa;
+  --color-filter-background-selected: #1d9045;
+  --color-filter-content-selected: #fafafa;
+  --color-content-primary: #fafafa;
+  --color-content-secondary: #a5a5a5;
+}
+
+/* Light Mode Colors */
+[data-theme="light"] {
+  --color-background-primary: #f8f9fa;
+  --color-link-default: #075036;
+  --color-filter-background-selected: #1d9045;
+  --color-filter-content-selected: #ffffff;
+  --color-content-primary: #1a1a1a;
+  --color-content-secondary: #6c757d;
+}
