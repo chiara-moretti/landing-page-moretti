@@ -27,7 +27,7 @@
 
 <nav class="topbar">
   <div class="brand">
-    <a class="brand-text" href="/">Frammemento</a>
+    <a class="brand-text" href="./">Frammemento</a>
   </div>
   <div class="mobile-actions">
     <button
@@ -52,8 +52,8 @@
   </div>
 
   <div id="topbar-menu" class="menu" class:menu-open={isMobileMenuOpen}>
-    <a class="menu-link" href="/" onclick={closeMobileMenu}>About</a>
-    <a class="menu-link" href="/" onclick={closeMobileMenu}>@frammemento</a>
+    <a class="menu-link" href="./" onclick={closeMobileMenu}>About</a>
+    <a class="menu-link" href="./" onclick={closeMobileMenu}>@frammemento</a>
     <button class="theme-toggle-button desktop-theme-toggle" onclick={toggleTheme} aria-label="Toggle theme">
       <svg class="theme-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>

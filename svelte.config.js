@@ -2,6 +2,10 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+const githubPagesBase = process.env.BASE_PATH ?? (repoName ? `/${repoName}` : '');
+const basePath =
+	process.env.BASE_PATH ?? (process.env.NODE_ENV === 'production' ? (repoName ? `/${repoName}` : '') : '');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,7 +17,7 @@ const config = {
 	},
 	kit: {
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/landing-page-moretti' : ''
+			base: basePath
 		},
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
 		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
