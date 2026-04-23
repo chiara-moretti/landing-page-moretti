@@ -39,4 +39,11 @@
   .filter-chip.selected:hover {
     background: var(--color-filter-background-selected);
   }
+
+  @media (max-width: 768px) {
+    .filter-chip {
+      padding: var(--spacing-1) var(--spacing-3);
+      font-size: 1rem;
+    }
+  }
 </style>

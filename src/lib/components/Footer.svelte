@@ -32,4 +32,15 @@
   :global(html[data-theme='light']) .footer-logo img {
     filter: brightness(0) saturate(100%);
   }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: var(--spacing-3) 0;
+    }
+
+    .footer-logo {
+      width: 160px;
+      height: 62px;
+    }
+  }
 </style>

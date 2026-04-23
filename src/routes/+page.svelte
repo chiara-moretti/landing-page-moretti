@@ -77,6 +77,11 @@
     color: var(--color-content-primary);
   }
 
+  .hero-copy :global(p) {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
   .content-section {
     display: flex;
     flex-direction: column;
@@ -108,6 +113,38 @@
 
     .card-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .topbar-slot {
+      position: static;
+      top: auto;
+      padding-left: var(--spacing-3);
+      padding-right: var(--spacing-3);
+    }
+
+    .hero-section {
+      padding-top: var(--spacing-2);
+      padding-left: var(--spacing-3);
+      padding-right: var(--spacing-3);
+    }
+
+    .hero-copy {
+      font-size: clamp(1.35rem, 6.4vw, 1.9rem);
+      line-height: 1.08;
+      max-width: 100%;
+    }
+
+    .content-section {
+      gap: var(--spacing-4);
+      padding-left: var(--spacing-3);
+      padding-right: var(--spacing-3);
+      padding-bottom: var(--spacing-5);
+    }
+
+    .card-grid {
+      gap: var(--spacing-4);
     }
   }
 </style>

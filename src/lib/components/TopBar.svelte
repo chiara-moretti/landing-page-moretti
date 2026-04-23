@@ -89,4 +89,46 @@
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    .topbar {
+      flex-wrap: wrap;
+      align-items: center;
+      row-gap: var(--spacing-2);
+      padding-top: var(--spacing-1);
+      padding-bottom: var(--spacing-1);
+    }
+
+    .brand {
+      width: 100%;
+    }
+
+    .menu {
+      width: 100%;
+      margin-left: 0;
+      gap: var(--spacing-2);
+      justify-content: space-between;
+    }
+
+    .brand-text,
+    .menu-link {
+      font-size: 0.95rem;
+    }
+
+    .menu-link {
+      max-width: 42vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .theme-toggle-button {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .theme-toggle-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
 </style>

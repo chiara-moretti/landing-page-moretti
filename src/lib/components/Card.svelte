@@ -31,10 +31,11 @@
 
   .project-image {
     width: 100%;
-    height: 403px;
-    border-radius: var(--radius-m);
+    aspect-ratio: 665 / 403;
+    border-radius: 0 !important;
     overflow: hidden;
     position: relative;
+    transition: border-radius 0.2s ease;
   }
 
   .project-image::after {
@@ -45,6 +46,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
+    border-radius: 0 !important;
   }
 
   .hover-arrow {
@@ -76,10 +78,20 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0 !important;
+    transition: border-radius 0.2s ease;
   }
 
   .project-card:hover .project-image::after {
     opacity: 0.25;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:hover .project-image,
+    .project-card:hover .project-image::after,
+    .project-card:hover .project-image img {
+      border-radius: var(--radius-m) !important;
+    }
   }
 
   .project-card:hover .hover-arrow {
@@ -115,5 +127,33 @@
   .project-year,
   .project-separator {
     color: var(--color-content-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      gap: var(--spacing-2);
+    }
+
+    .project-meta {
+      min-height: 24px;
+      gap: 6px;
+    }
+
+    .project-name,
+    .project-year,
+    .project-separator {
+      font-size: 1rem;
+    }
+
+    .project-name {
+      width: auto;
+      max-width: 65%;
+    }
+
+    .hover-arrow,
+    .hover-arrow svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 </style>

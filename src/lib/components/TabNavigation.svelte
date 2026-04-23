@@ -25,4 +25,10 @@
       padding: 0;
     }
   }
+
+  @media (max-width: 768px) {
+    .tabs-row {
+      gap: var(--spacing-2);
+    }
+  }
 </style>
