@@ -5,10 +5,19 @@
   import Footer from '$lib/components/Footer.svelte';
   import Landing from '../content/landing.md';
 
+  /** @typedef {{ name: string; year: string; imageSrc: string }} ProjectMetadata */
+  /** @type {Record<string, { metadata: ProjectMetadata }>} */
   const projectModules = import.meta.glob('../content/projects/*.md', { eager: true });
+  /** @type {ProjectMetadata[]} */
   const projects = Object.values(projectModules)
     .map((module) => module.metadata)
     .sort((a, b) => a.name.localeCompare(b.name));
+  let selectedYear = $state('2026');
+  const filteredProjects = $derived(projects.filter((project) => project.year === selectedYear));
+  /** @param {string} year */
+  const handleSelectYear = (year) => {
+    selectedYear = year;
+  };
 
   const footerLogo = 'https://www.figma.com/api/mcp/asset/0782722e-c92e-4185-9c49-b617b7322c94';
 </script>
@@ -25,10 +34,10 @@
   </section>
 
   <section class="content-section">
-    <TabNavigation />
+    <TabNavigation selectedYear={selectedYear} onSelectYear={handleSelectYear} />
 
     <div class="card-grid">
-      {#each projects as project}
+      {#each filteredProjects as project}
         <Card imageSrc={project.imageSrc} projectName={project.name} year={project.year} />
       {/each}
     </div>
@@ -49,14 +58,14 @@
 
   .topbar-slot {
     position: absolute;
-    top: 112px;
+    top: 1rem;
     left: 0;
     right: 0;
     padding: 0 var(--spacing-12);
   }
 
   .hero-section {
-    padding: 188px var(--spacing-12) 0;
+    padding: 112px var(--spacing-12) 0;
   }
 
   .hero-copy {
