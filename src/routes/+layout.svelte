@@ -22,4 +22,16 @@
 
 </svelte:head>
 
+<<<<<<< Updated upstream
 {@render children()}
+=======
+<div class="layout-shell">
+	{@render children()}
+</div>
+
+<style>
+	.layout-shell {
+		min-height: 100vh;
+	}
+</style>
+>>>>>>> Stashed changes
