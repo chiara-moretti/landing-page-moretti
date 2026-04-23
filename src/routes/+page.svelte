@@ -120,26 +120,26 @@
     .topbar-slot {
       position: static;
       top: auto;
-      padding-left: var(--spacing-3);
-      padding-right: var(--spacing-3);
+      padding-left: var(--spacing-4);
+      padding-right: var(--spacing-4);
     }
 
     .hero-section {
       padding-top: var(--spacing-2);
-      padding-left: var(--spacing-3);
-      padding-right: var(--spacing-3);
+      padding-left: var(--spacing-4);
+      padding-right: var(--spacing-4);
     }
 
     .hero-copy {
-      font-size: clamp(1.35rem, 6.4vw, 1.9rem);
+      font-size: var(--unit-24);
       line-height: 1.08;
       max-width: 100%;
     }
 
     .content-section {
       gap: var(--spacing-4);
-      padding-left: var(--spacing-3);
-      padding-right: var(--spacing-3);
+      padding-left: var(--spacing-4);
+      padding-right: var(--spacing-4);
       padding-bottom: var(--spacing-5);
     }
 

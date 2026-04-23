@@ -11,7 +11,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-2) var(--spacing-4);
+    padding: var(--spacing-2) var(--spacing-5);
     border-radius: var(--radius-full);
     background: transparent;
     border: none;
@@ -42,7 +42,7 @@
 
   @media (max-width: 768px) {
     .filter-chip {
-      padding: var(--spacing-1) var(--spacing-3);
+      padding: var(--spacing-2) var(--spacing-4);
       font-size: 1rem;
     }
   }
