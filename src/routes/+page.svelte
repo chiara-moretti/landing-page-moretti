@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-=======
 <script>
   import TopBar from '$lib/components/TopBar.svelte';
   import TabNavigation from '$lib/components/TabNavigation.svelte';
@@ -9,19 +5,10 @@
   import Footer from '$lib/components/Footer.svelte';
   import Landing from '../content/landing.md';
 
-  /** @typedef {{ name: string; year: string; imageSrc: string }} ProjectMetadata */
-  /** @type {Record<string, { metadata: ProjectMetadata }>} */
   const projectModules = import.meta.glob('../content/projects/*.md', { eager: true });
-  /** @type {ProjectMetadata[]} */
   const projects = Object.values(projectModules)
     .map((module) => module.metadata)
     .sort((a, b) => a.name.localeCompare(b.name));
-  let selectedYear = $state('2026');
-  const filteredProjects = $derived(projects.filter((project) => project.year === selectedYear));
-  /** @param {string} year */
-  const handleSelectYear = (year) => {
-    selectedYear = year;
-  };
 
   const footerLogo = 'https://www.figma.com/api/mcp/asset/0782722e-c92e-4185-9c49-b617b7322c94';
 </script>
@@ -38,10 +25,10 @@
   </section>
 
   <section class="content-section">
-    <TabNavigation selectedYear={selectedYear} onSelectYear={handleSelectYear} />
+    <TabNavigation />
 
     <div class="card-grid">
-      {#each filteredProjects as project}
+      {#each projects as project}
         <Card imageSrc={project.imageSrc} projectName={project.name} year={project.year} />
       {/each}
     </div>
@@ -61,11 +48,15 @@
   }
 
   .topbar-slot {
-    padding: var(--spacing-7) var(--spacing-12) 0;
+    position: absolute;
+    top: 112px;
+    left: 0;
+    right: 0;
+    padding: 0 var(--spacing-12);
   }
 
   .hero-section {
-    padding: var(--spacing-6) var(--spacing-12) 0;
+    padding: 188px var(--spacing-12) 0;
   }
 
   .hero-copy {
@@ -73,12 +64,8 @@
     font-family: var(--font-font-1);
     font-size: var(--unit-40);
     line-height: 1;
-    white-space: normal;
+    white-space: pre-wrap;
     color: var(--color-content-primary);
-  }
-
-  .hero-copy :global(p) {
-    margin: 0;
   }
 
   .content-section {
@@ -87,7 +74,7 @@
     gap: var(--spacing-7);
     align-items: flex-start;
     padding: 0 var(--spacing-12) var(--spacing-4);
-    margin-top: var(--spacing-7);
+    margin-top: 0;
   }
 
   .card-grid {
@@ -115,4 +102,3 @@
     }
   }
 </style>
->>>>>>> Stashed changes

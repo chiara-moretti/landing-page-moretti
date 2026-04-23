@@ -27,10 +27,5 @@
     height: 100%;
     object-fit: contain;
     display: block;
-    transition: filter 0.2s ease;
-  }
-
-  :global(html[data-theme='light']) .footer-logo img {
-    filter: brightness(0) saturate(100%);
   }
 </style>

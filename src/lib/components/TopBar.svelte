@@ -1,34 +1,10 @@
-<script>
-  import { onMount } from 'svelte';
-  import { base } from '$app/paths';
-
-  onMount(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', initialTheme);
-  });
-
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') ?? 'dark';
-    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('theme', nextTheme);
-  }
-</script>
-
 <nav class="topbar">
   <div class="brand">
-    <a class="brand-text" href={`${base}/`}>Frammemento</a>
+    <p class="brand-text">Frammemento</p>
   </div>
   <div class="menu">
-    <a class="menu-link" href={`${base}/`}>About</a>
-    <a class="menu-link" href={`${base}/`}>@frammemento</a>
-    <button class="theme-toggle-button" onclick={toggleTheme} aria-label="Toggle theme">
-      <svg class="theme-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-      </svg>
-    </button>
+    <a class="menu-link" href="/">About</a>
+    <a class="menu-link" href="/">@frammemento</a>
   </div>
 </nav>
 
@@ -38,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: var(--spacing-3) var(--spacing-0);
+    padding: var(--spacing-5) var(--spacing-0);
   }
 
   .brand,
@@ -59,38 +35,5 @@
     color: var(--color-link-default);
     text-decoration: none;
     white-space: nowrap;
-  }
-
-  .menu-link {
-    transition: color 0.2s ease;
-  }
-
-  .brand-text:hover,
-  .menu-link:hover {
-    color: var(--color-filter-background-selected);
-  }
-
-  .theme-toggle-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0;
-    border-radius: 50%;
-    background: var(--color-content-primary);
-    color: var(--color-background-primary);
-    border: 1px solid var(--color-content-secondary);
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-  }
-
-  .theme-toggle-button:hover {
-    opacity: 0.8;
-  }
-
-  .theme-toggle-icon {
-    width: 1.5rem;
-    height: 1.5rem;
   }
 </style>

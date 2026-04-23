@@ -1,8 +1,8 @@
 <script>
-  let { year = "2026", selected = false, onSelect = () => {} } = $props();
+  let { year = "2026", selected = false } = $props();
 </script>
 
-<button type="button" class:selected={selected} class="filter-chip" onclick={() => onSelect(year)}>
+<button class:selected={selected} class="filter-chip">
   <span>{year}</span>
 </button>
 
@@ -20,19 +20,10 @@
     color: var(--color-content-primary);
     cursor: pointer;
     white-space: nowrap;
-    transition: background-color 0.2s ease;
-  }
-
-  .filter-chip:hover {
-    background: #424242;
   }
 
   .filter-chip.selected {
     background: var(--color-filter-background-selected);
     color: var(--color-filter-content-selected);
-  }
-
-  .filter-chip.selected:hover {
-    background: var(--color-filter-background-selected);
   }
 </style>
