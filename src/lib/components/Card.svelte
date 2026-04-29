@@ -27,6 +27,7 @@
     width: 100%;
     max-width: 665px;
     position: relative;
+    margin: 0 auto;
   }
 
   .project-image {

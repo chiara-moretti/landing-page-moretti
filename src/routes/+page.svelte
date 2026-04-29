@@ -112,7 +112,14 @@
     }
 
     .card-grid {
+      gap: var(--spacing-4);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .card-grid {
       grid-template-columns: 1fr;
+      gap: var(--spacing-4);
     }
   }
 
