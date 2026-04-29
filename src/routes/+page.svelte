@@ -8,10 +8,10 @@
   /** @typedef {{ name: string; year: string; imageSrc: string }} ProjectMetadata */
   /** @type {Record<string, { metadata: ProjectMetadata }>} */
   const projectModules = import.meta.glob('../content/projects/*.md', { eager: true });
-  /** @type {ProjectMetadata[]} */
-  const projects = Object.values(projectModules)
-    .map((module) => module.metadata)
-    .sort((a, b) => a.name.localeCompare(b.name));
+  /** @type {(ProjectMetadata & { key: string })[]} */
+  const projects = Object.entries(projectModules)
+    .map(([key, module]) => ({ key, ...module.metadata }))
+    .sort((a, b) => a.key.localeCompare(b.key));
   let selectedYear = $state('2026');
   const filteredProjects = $derived(projects.filter((project) => project.year === selectedYear));
   /** @param {string} year */

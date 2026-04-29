@@ -1,5 +1,5 @@
 ---
-name: "Project name"
+name: "Pinacoteca di Brera. Milano"
 year: "2026"
 imageSrc: "https://www.figma.com/api/mcp/asset/cfd4de51-6bc7-4f8e-b3ef-828ab45c757c"
 ---

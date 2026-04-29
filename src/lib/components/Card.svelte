@@ -8,8 +8,10 @@
   </div>
   <div class="project-meta">
     <p class="project-name">{projectName}</p>
-    <span class="project-separator">/</span>
-    <p class="project-year">{year}</p>
+    <div class="project-year-group">
+      <span class="project-separator">/</span>
+      <p class="project-year">{year}</p>
+    </div>
     <div class="hover-arrow" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M7 17L17 7M9 7H17V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -51,7 +53,7 @@
   }
 
   .hover-arrow {
-    margin-left: auto;
+    margin-left: 0;
     width: 24px;
     height: 24px;
     display: inline-flex;
@@ -103,7 +105,7 @@
   .project-meta {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0;
     width: 100%;
     min-height: 28px;
     justify-content: flex-start;
@@ -119,10 +121,21 @@
   }
 
   .project-name {
-    width: 142px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    flex: 0 1 auto; /* keep "/ year" attached right after the title */
+    min-width: 0;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .project-year-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: var(--spacing-2); /* two visual spaces between title and "/ year" */
+  }
+
+  .hover-arrow {
+    margin-left: auto; /* keep arrow at the far right */
   }
 
   .project-year,
@@ -147,8 +160,7 @@
     }
 
     .project-name {
-      width: auto;
-      max-width: 65%;
+      max-width: none;
     }
 
     .hover-arrow,
